@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keypress</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #display{
+            height: 35px;
+            width: 200px;
+            background-color: antiquewhite;
+            text-align: center;
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="display">Press any key</h2>
+
+    <script> 
+        let display = document.getElementById("display");
+
+        document.addEventListener("keydown", function (e){
+            display.style.color = "red";
+            display.innerText = e.key + " is pressed!";
+        });
+
+        document.addEventListener("keyup", function (e){
+            display.style.color = "green";
+            display.innerText = e.key + " is released!";
+        });
+    </script>
+</body>
+</html>
